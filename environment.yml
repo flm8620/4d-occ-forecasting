@@ -163,7 +163,6 @@ dependencies:
   - tifffile=2020.10.1=py38hdd07704_2
   - tk=8.6.10=hbc83047_0
   - toolz=0.11.1=pyhd3eb1b0_0
-  - torchvision=0.2.2=py_3
   - tornado=6.1=py38h27cfd23_0
   - tqdm=4.62.2=pyhd3eb1b0_1
   - traitlets=5.1.0=pyhd8ed1ab_0
@@ -190,11 +189,12 @@ dependencies:
   - zlib=1.2.11=h7b6447c_3
   - zstd=1.4.5=h9ceee32_0
   - pip:
+    - torchvision==0.2.2
     - argon2-cffi==21.1.0
     - bleach==4.1.0
     - chamferdist==1.0.0
     - cycler==0.10.0
-    - cython==0.29.24
+    - cython==0.29.36
     - debugpy==1.4.3
     - defusedxml==0.7.1
     - descartes==1.1.0

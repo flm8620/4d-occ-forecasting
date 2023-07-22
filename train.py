@@ -165,7 +165,7 @@ def train(args):
     #
     writer = SummaryWriter(f"{args.model_dir}/tf_logs")
     for epoch in range(start_epoch, args.num_epoch):
-        for phase in ["train"]:  # , "val"]:
+        for phase in ["train", "val"]:
             data_loader = data_loaders[phase]
             if phase == "train":
                 model.train()
@@ -227,19 +227,19 @@ def train(args):
                                 input_points
                             )
 
-                if phase == "train" and (i + 1) % (num_batch // 10) == 0:
-                    ckpt_path = f"{ckpt_dir}/model_epoch_{epoch}_iter_{n_iter}.pth"
-                    torch.save(
-                            {
-                                "epoch": epoch,
-                                "n_iter": n_iter,
-                                "model_state_dict": model.module.state_dict(),
-                                "optimizer_state_dict": optimizer.state_dict(),
-                                "scheduler_state_dict": scheduler.state_dict(),
-                            },
-                            ckpt_path,
-                            _use_new_zipfile_serialization=False,
-                    )
+                # if phase == "train" and (i + 1) % (num_batch // 10) == 0:
+                #     ckpt_path = f"{ckpt_dir}/model_epoch_{epoch}_iter_{n_iter}.pth"
+                #     torch.save(
+                #             {
+                #                 "epoch": epoch,
+                #                 "n_iter": n_iter,
+                #                 "model_state_dict": model.module.state_dict(),
+                #                 "optimizer_state_dict": optimizer.state_dict(),
+                #                 "scheduler_state_dict": scheduler.state_dict(),
+                #             },
+                #             ckpt_path,
+                #             _use_new_zipfile_serialization=False,
+                #     )
 
             if phase == "train":
                 ckpt_path = f"{ckpt_dir}/model_epoch_{epoch}.pth"

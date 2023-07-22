@@ -1,0 +1,52 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 4d forcast",
+            "type": "python",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "/root/src/4d-occ-forecasting/",
+            "args": [
+                "--dataset",
+                "nuscenes",
+                "--nusc-root",
+                "/root/src/data/nuscenes",
+                "--nusc-version",
+                "v1.0-mini",
+                "--model-dir",
+                "models/nusc/1s_forecasting",
+                "--model-type",
+                "dynamic",
+                "--model-name",
+                "occ",
+                "--loss-type",
+                "l1",
+                "--n-input",
+                "2",
+                "--n-output",
+                "2",
+                "--pc-range",
+                "-40.0",
+                "-40.0",
+                "-3",
+                "40.0",
+                "40.0",
+                "3",
+                "--voxel-size",
+                "0.2",
+                "--batch-size",
+                "4",
+                "--num-workers",
+                "4",
+                "--num-epoch",
+                "15"
+            ]
+        }
+    ]
+}
